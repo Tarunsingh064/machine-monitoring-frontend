@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useAuth } from "@/context/Authcontext";
 import { motion } from "framer-motion";
 import { EnvelopeIcon, LockClosedIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-
+import {useRouter} from "next/navigation";
 export default function SignupPage() {
-  const { signup } = useAuth();
+  const { signup,user } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +25,12 @@ export default function SignupPage() {
       setIsLoading(false);
     }
   };
+  useEffect(() => {
+      if (user) {
+        router.push("/Auth/dashboard");
+      }
+    }, [user, router]);
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">

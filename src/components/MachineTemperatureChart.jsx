@@ -60,7 +60,7 @@ export default function MachineTemperatureChart() {
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-bold">Machine Temperature Trends</h2>
+        <h2 className="text-2xl font-bold">Machines Temperature Trends</h2>
         <button
           onClick={fetchMachines}
           disabled={loading}

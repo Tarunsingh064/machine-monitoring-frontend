@@ -1,6 +1,5 @@
 "use client";
 import Dashboard from "@/components/Dashboard";
-import MachineDetail from "@/components/MachineDetail";
 import MachineTemperatureChart from "@/components/MachineTemperatureChart";
 import { useAuth } from '@/context/Authcontext';
 import { useEffect }  from "react";
@@ -28,7 +27,7 @@ export default function DashboardPage() {
                 Logout
               </button>
       <Dashboard/>
-      <MachineDetail/>
+      
       <MachineTemperatureChart />
     </div>
   );
